@@ -1,5 +1,5 @@
 export const profile = {
-  name: ' Matheus.Dev',
+  name: ' Matheus Guilherme',
   fullName: 'Matheus Guilherme',
   roles: ['Software Engineer', 'Estudante de Sistemas de Informação', 'Em Busca de Oportunidade para Construir Soluções'],
   headline: 'Não escrevo código apenas para funcionar. Escrevo para resolver problemas, evoluir e construir soluções melhores.',
@@ -8,12 +8,14 @@ export const profile = {
     'Estou em busca da minha primeira oportunidade como estagiário ou desenvolvedor Jr, para aprender com um time de verdade e entregar valor desde o começo.',
   ],
   highlights: [
-    { label: 'Foco', value: 'Java + Spring Boot + APIRest' },
+    { label: 'Stack Principal', value: 'Java + Spring Boot + APIRest' },
     { label: 'Formação', value: 'Sistemas de Informação' },
     { label: 'Objetivo', value: 'Desenvolvedor de Software Jr' },
   ],
   email: 'matheusguilherme00221@gmail.com',
   github: 'https://github.com/PHYMatheus', 
   linkedin: 'https://www.linkedin.com/in/matheusgui-dev/',
-  resumeUrl: 'file:///C:/Users/Matheus/Documents/BibliotecaDEV/7.%20Curriculo/Matheus_Guilherme_Curriculo_Desenvolvedor.pdf',
+  whatsapp: '5581988924844',
+  whatsappMessage: 'Olá, Matheus! Vi seu portfólio e gostaria de conversar.',
+  resumeUrl: `${import.meta.env.BASE_URL}curriculo-matheus-guilherme.pdf`,
 }

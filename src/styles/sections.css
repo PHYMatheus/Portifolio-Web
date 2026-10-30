@@ -38,6 +38,16 @@
   background: rgba(225, 29, 46, 0.22);
 }
 
+.btn--whatsapp {
+  background: #25d366;
+  color: #06220f;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.28);
+}
+
+.btn--whatsapp:hover {
+  box-shadow: 0 12px 36px rgba(37, 211, 102, 0.4);
+}
+
 /* ============ Navbar ============ */
 .navbar {
   position: fixed;
@@ -179,9 +189,29 @@
 
 .hero__socials {
   display: flex;
+  align-items: center;
   gap: 1.25rem;
   margin-top: 2rem;
   font-size: 1.5rem;
+}
+
+.hero__resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.hero__resume span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.hero__resume:hover {
+  border-color: var(--primary);
+  background: rgba(225, 29, 46, 0.22);
 }
 
 .hero__socials a {
@@ -375,6 +405,13 @@
   margin-bottom: 2rem;
   color: var(--text-muted);
   font-size: 1.05rem;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .contact__links {

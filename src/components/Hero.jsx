@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa'
 import { profile } from '../data/profile.js'
 import useTypewriter from '../hooks/useTypewriter.js'
 
@@ -36,6 +36,15 @@ export default function Hero() {
           </a>
           <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
             <FaLinkedin />
+          </a>
+          <a
+            href={profile.resumeUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="hero__resume"
+            aria-label="Abrir currículo em PDF"
+          >
+            <FaFilePdf /> <span>Currículo</span>
           </a>
         </div>
       </div>

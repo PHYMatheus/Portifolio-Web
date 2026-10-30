@@ -1,4 +1,4 @@
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { profile } from '../data/profile.js'
 import useReveal from '../hooks/useReveal.js'
 
@@ -15,9 +15,19 @@ export default function Contact() {
           Estou aberto a oportunidades de estágio e vaga Jr. Se curtiu meu trabalho, me chama!
         </p>
 
-        <a href={`mailto:${profile.email}`} className="btn btn--primary">
-          <FaEnvelope /> Enviar e-mail
-        </a>
+        <div className="contact__actions">
+          <a href={`mailto:${profile.email}`} className="btn btn--primary">
+            <FaEnvelope /> Enviar e-mail
+          </a>
+          <a
+            href={`https://wa.me/${profile.whatsapp}?text=${encodeURIComponent(profile.whatsappMessage)}`}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn--whatsapp"
+          >
+            <FaWhatsapp /> WhatsApp
+          </a>
+        </div>
 
         <div className="contact__links">
           <a href={profile.github} target="_blank" rel="noreferrer">

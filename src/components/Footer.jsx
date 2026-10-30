@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <p>
-          Feito com React por <span className="accent">{profile.name}</span> ·{' '}
+          Feito por <span className="accent">{profile.name}</span> ·{' '}
           {new Date().getFullYear()}
         </p>
       </div>
