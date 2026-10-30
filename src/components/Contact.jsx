@@ -16,9 +16,14 @@ export default function Contact() {
         </p>
 
         <div className="contact__actions">
-          <a href={`mailto:${profile.email}`} className="btn btn--primary">
-            <FaEnvelope /> Enviar e-mail
-          </a>
+          <a
+         href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}&su=${encodeURIComponent(profile.emailSubject)}&body=${encodeURIComponent(profile.emailMessage)}`}
+        target="_blank"
+        rel="noreferrer"
+        className="btn btn--primary"
+        >
+  <FaEnvelope /> Enviar e-mail
+</a>
           <a
             href={`https://wa.me/${profile.whatsapp}?text=${encodeURIComponent(profile.whatsappMessage)}`}
             target="_blank"

@@ -1,6 +1,6 @@
 export const profile = {
-  name: ' Matheus Guilherme',
-  fullName: 'Matheus Guilherme',
+  name: ' Matheus ',
+  fullName: 'Matheus ',
   roles: ['Software Engineer', 'Estudante de Sistemas de Informação', 'Em Busca de Oportunidade para Construir Soluções'],
   headline: 'Não escrevo código apenas para funcionar. Escrevo para resolver problemas, evoluir e construir soluções melhores.',
   about: [
@@ -13,6 +13,9 @@ export const profile = {
     { label: 'Objetivo', value: 'Desenvolvedor de Software Jr' },
   ],
   email: 'matheusguilherme00221@gmail.com',
+    emailSubject: 'Contato pelo portfólio',
+  emailMessage:
+    'Olá, Matheus! Vi seu portfólio e gostaria de conversar sobre uma oportunidade.',
   github: 'https://github.com/PHYMatheus', 
   linkedin: 'https://www.linkedin.com/in/matheusgui-dev/',
   whatsapp: '5581988924844',
