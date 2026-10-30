@@ -1,46 +1,18 @@
-# Portfólio do Matheus
 
-Portfólio web feito com **React + Vite**, JavaScript, HTML e CSS.
+<p align="center">
+  <img
+    src="./public/svg-banner.svg"
+    alt="Portfólio Web - Matheus"
+    width="100%"
+  />
+</p>
 
-## Como rodar
+<p align="center">
+ Meu portfólio web: quem eu sou, o que eu sei fazer e os projetos que construí, tudo num lugar só.
+</p>
 
-```bash
-npm install
-npm run dev
-```
-
-Abre em `http://localhost:5173`.
-
-## Build de produção
-
-```bash
-npm run build
-npm run preview
-```
-
-## Estrutura
-
-```
-src/
-├── components/   # Navbar, Hero, About, Skills, Projects, Contact, Footer
-├── data/         # EDITE AQUI: profile.js, skills.js, projects.js
-├── hooks/        # useReveal (animação no scroll), useTypewriter (efeito de digitação)
-├── styles/       # global.css (tokens + reset) e sections.css (componentes)
-├── App.jsx
-└── main.jsx
-```
-
-## Como personalizar
-
-Todo o conteúdo mora em `src/data/`. Troque nome, links, skills e projetos lá
-e o site inteiro atualiza, sem precisar mexer nos componentes.
-
-## Paleta
-
-| Uso    | Cor       |
-| ------ | --------- |
-| Fundo  | `#09090F` |
-| Cards  | `#171326` |
-| Roxo   | `#8B5CF6` |
-| Pink   | `#D946EF` |
-| Texto  | `#F5F3FF` |
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18-E11D2E?style=for-the-badge&logo=react&logoColor=white&labelColor=0B0909" alt="React" />
+  <img src="https://img.shields.io/badge/Vite-8-E11D2E?style=for-the-badge&logo=vite&logoColor=white&labelColor=0B0909" alt="Vite" />
+  <img src="https://img.shields.io/badge/Deploy-Vercel-E11D2E?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0B0909" alt="Vercel" />
+</p>
