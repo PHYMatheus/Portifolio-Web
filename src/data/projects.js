@@ -13,7 +13,7 @@ export const projects = [
     problem: 'Dificuldade de usuários em organizar tarefas diárias e manter o foco nas atividades importantes.',
     description:
       'APIRest de gestão de tarefas com interface simples e intuitiva, permitindo a criação, edição e exclusão de tarefas.',
-    stack: ['Java', 'Spring Boot', 'PostgreSQL'],
+    stack: ['Java', 'Spring Boot', 'PostgreSQL', 'DockerList', 'Autenticação JWT', 'JPA', 'injection de dependência', 'Render'],
     repo: 'https://github.com/PHYMatheus/TodayList',
     demo: 'https://github.com/PHYMatheus/TodayList',
   },
@@ -22,8 +22,19 @@ export const projects = [
     problem: 'Sistema que simula uma API de academia, permitindo o gerenciamento de treinos, exercícios e usuários.',
     description:
       'Aplicação permite que os usuários criem e gerenciem seus treinos, adicionem exercícios e acompanhem seu progresso ao longo do tempo.',
-    stack: ['Java', 'Poo', 'MySQL'],
+    stack: ['Java', 'Poo', 'MySQL', 'Hibernate'],
     repo: 'https://github.com/devviniciuss11/Fitflow-GerenciamentoDeAcademia',
     demo: 'https://github.com/devviniciuss11/Fitflow-GerenciamentoDeAcademia',
   },
+
+  {
+    title: 'BarberFlow',
+    problem: 'Sistema que simula uma API de Barbearia, permitindo o gerenciamento Cadastro de clientes, Horários e Serviços.',
+    description:
+      'Aplicação permite que os usuários criem seus perfis , contate com o barbeiro, agendem horários, companhem seu histórico de serviços e Ranking de Fidelidade que permite que o cliente ganhe pontos a cada serviço realizado.',
+    stack: ['Java', 'Spring Boot', 'PostgreSQL', 'JavaScript', 'React', 'CSS3', 'HTML5', 'JPA'],
+    repo: 'https://github.com/devviniciuss11/BarberFlow-Agendamentos-De-Barbearia',
+    demo: 'https://github.com/devviniciuss11/BarberFlow-Agendamentos-De-Barbearia',
+  },
+
 ]
