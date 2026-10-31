@@ -13,7 +13,7 @@ export const projects = [
     problem: 'Dificuldade de usuários em organizar tarefas diárias e manter o foco nas atividades importantes.',
     description:
       'APIRest de gestão de tarefas com interface simples e intuitiva, permitindo a criação, edição e exclusão de tarefas.',
-    stack: ['Java', 'Spring Boot', 'PostgreSQL', 'DockerList', 'Autenticação JWT', 'JPA', 'injection de dependência', 'Render'],
+    stack: ['Java', 'Spring Boot', 'PostgreSQL', 'DockerFile', 'Autenticação JWT', 'JPA', 'injection de dependência', 'Render'],
     repo: 'https://github.com/PHYMatheus/TodayList',
     demo: 'https://github.com/PHYMatheus/TodayList',
   },
