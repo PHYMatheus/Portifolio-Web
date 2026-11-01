@@ -1,7 +1,7 @@
 export const profile = {
-  name: ' Matheus ',
-  fullName: 'Matheus ',
-  roles: ['Software Engineer', 'Estudante de Sistemas de Informação', 'Em Busca de Oportunidade para Construir Soluções'],
+  name: ' Matheus.Dev ',
+  fullName: 'Matheus.Dev ',
+  roles: ['Software Engineer', 'Estudante de Sistemas de Informação', 'Buscando 1° oportunidade como Desenvolvedor Jr'],
   headline: 'Não escrevo código apenas para funcionar. Escrevo para resolver problemas, evoluir e construir soluções melhores.',
   about: [
     'Sou estudante de Sistemas de Informação com Previsão para formação em Dezembro de 2028, Desenvolvedor Focado na stack Java. Gosto de entender o problema de quem vai usar o sistema antes de escrever a primeira linha de código.',
