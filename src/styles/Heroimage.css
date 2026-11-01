@@ -1,0 +1,297 @@
+/* ============ Foto do Hero: palco com aura, órbita de techs e brasas ============ */
+/* Arquivo novo: não altera nenhuma regra existente, só adiciona. */
+
+:root {
+  --red: #ff1f3a;
+  --red-soft: rgba(255, 31, 58, 0.6);
+}
+
+/* Desktop: foto à direita, ocupando o espaço livre ao lado do texto */
+.hero__inner {
+  position: relative;
+}
+
+.hero-photo {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(280px, 34vw, 430px);
+  aspect-ratio: 900 / 985;
+  z-index: 0;
+}
+
+/* O texto continua clicável e por cima da foto */
+.hero__inner > *:not(.hero-photo) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Palco: inclina de leve seguindo o mouse (variáveis setadas pelo JS) */
+.hero-photo__stage {
+  position: absolute;
+  inset: 0;
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.25s ease-out;
+  pointer-events: none;
+}
+
+/* ---------- Aura girando atrás da foto ---------- */
+.hero-photo__aura {
+  position: absolute;
+  left: -6%;
+  top: -2%;
+  width: 112%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 31, 58, 0) 0%,
+    rgba(255, 31, 58, 0.6) 16%,
+    rgba(255, 31, 58, 0) 38%,
+    rgba(170, 0, 28, 0.5) 60%,
+    rgba(255, 31, 58, 0) 84%
+  );
+  filter: blur(34px);
+  translate: var(--px, 0px) var(--py, 0px);
+  animation: spin 9s linear infinite;
+}
+
+/* Anel fino com "cometa" de luz */
+.hero-photo__ring {
+  position: absolute;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+.hero-photo__ring--solid {
+  left: 0;
+  top: 1%;
+  width: 100%;
+  background: conic-gradient(from 0deg, rgba(255, 31, 58, 0) 0%, rgba(255, 31, 58, 0.95) 22%, rgba(255, 31, 58, 0) 48%);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  filter: drop-shadow(0 0 6px var(--red));
+  animation: spin 6s linear infinite;
+}
+
+.hero-photo__ring--dashed {
+  left: -5%;
+  top: -4%;
+  width: 110%;
+  border: 1.5px dashed rgba(255, 31, 58, 0.4);
+  animation: spin 40s linear infinite reverse;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Brasas subindo ---------- */
+.hero-photo__embers {
+  position: absolute;
+  inset: -4% -8% 0;
+  overflow: hidden;
+}
+
+.hero-photo__embers span {
+  position: absolute;
+  left: var(--x);
+  bottom: 4%;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: #ff5a6a;
+  box-shadow: 0 0 8px 2px rgba(255, 31, 58, 0.9);
+  opacity: 0;
+  animation: ember var(--dur) ease-in infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes ember {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--sway), -420px) scale(0.3);
+  }
+}
+
+/* ---------- Foto com contorno vermelho ---------- */
+/* Sombras sem blur em 4 direções desenham o traço; a última cria o brilho que "respira". */
+/* "Figure" é uma caixa 16% maior que a foto (pra caber o brilho do contorno);
+   a máscara dissolve a base da foto no fundo da página em vez de cortar reto. */
+.hero-photo__figure {
+  position: absolute;
+  z-index: 1;
+  left: -8%;
+  top: -8%;
+  width: 116%;
+  height: 116%;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 94%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 94%);
+}
+
+.hero-photo__img {
+  position: absolute;
+  left: 6.9%;
+  top: 6.9%;
+  width: 86.2%;
+  height: auto;
+  display: block;
+  translate: calc(var(--px, 0px) * -0.3) calc(var(--py, 0px) * -0.3);
+  filter: drop-shadow(2px 0 0 var(--red)) drop-shadow(-2px 0 0 var(--red))
+    drop-shadow(0 2px 0 var(--red)) drop-shadow(0 -2px 0 var(--red))
+    drop-shadow(0 0 14px var(--red-soft));
+  animation: outline-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes outline-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(2px 0 0 var(--red)) drop-shadow(-2px 0 0 var(--red))
+      drop-shadow(0 2px 0 var(--red)) drop-shadow(0 -2px 0 var(--red))
+      drop-shadow(0 0 12px var(--red-soft));
+  }
+  50% {
+    filter: drop-shadow(2px 0 0 var(--red)) drop-shadow(-2px 0 0 var(--red))
+      drop-shadow(0 2px 0 var(--red)) drop-shadow(0 -2px 0 var(--red))
+      drop-shadow(0 0 28px rgba(255, 31, 58, 0.85));
+  }
+}
+
+/* ---------- Tecnologias orbitando ---------- */
+.hero-photo__orbit {
+  position: absolute;
+  inset: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tech-chip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #fff;
+  background: rgba(20, 8, 12, 0.72);
+  border: 1px solid rgba(255, 31, 58, 0.65);
+  box-shadow: 0 0 14px rgba(255, 31, 58, 0.35), inset 0 0 8px rgba(255, 31, 58, 0.15);
+  backdrop-filter: blur(6px);
+  will-change: transform, opacity;
+}
+
+.tech-chip svg {
+  color: var(--red);
+  font-size: 1rem;
+}
+
+/* ---------- Selo de disponibilidade ---------- */
+.hero-photo__badge {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 3%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #fff;
+  background: rgba(20, 8, 12, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.hero-photo__dot {
+  position: relative;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #34d399;
+}
+
+.hero-photo__dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #34d399;
+  animation: ping 1.8s ease-out infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Mobile/tablet: a foto desce pra baixo do texto, centralizada */
+@media (max-width: 900px) {
+  section.hero {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-photo {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: min(300px, 72%);
+    margin: 3rem auto 0;
+  }
+
+  .tech-chip {
+    font-size: 0.66rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .hero-photo__badge {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Acessibilidade: sem animação pra quem pediu movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo__aura,
+  .hero-photo__ring,
+  .hero-photo__img,
+  .hero-photo__embers span,
+  .hero-photo__dot::after {
+    animation: none;
+  }
+  .hero-photo__embers {
+    display: none;
+  }
+  .hero-photo__stage {
+    transition: none;
+  }
+}

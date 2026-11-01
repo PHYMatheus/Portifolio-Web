@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa'
 import { profile } from '../data/profile.js'
 import useTypewriter from '../hooks/useTypewriter.js'
+import HeroImage from './HeroImage.jsx'
 
 export default function Hero() {
   const typed = useTypewriter(profile.roles)
@@ -47,6 +48,8 @@ export default function Hero() {
             <FaFilePdf /> <span>Currículo</span>
           </a>
         </div>
+
+        <HeroImage />
       </div>
     </section>
   )
