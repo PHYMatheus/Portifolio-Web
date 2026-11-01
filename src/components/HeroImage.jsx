@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { FaJava, FaReact, FaGitAlt, FaDatabase, FaPlug } from 'react-icons/fa'
 import { SiSpringboot } from 'react-icons/si'
-import '../styles/heroimage.css'
+import '../styles/Heroimage.css'
 
 // Foto do hero com "palco": aura vermelha girando, tecnologias orbitando em 3D,
 // brasas subindo, inclinação com o mouse e selo de disponibilidade.
